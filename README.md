@@ -9,7 +9,36 @@ and then sends the new server state to the client. Otherwise, the last action re
 
 In this modified version, the server waits indefinitely for the client control command, as would do any gym environments.
 
-Original TORCS Readme file:
+## Getting Started:
+
+### Requirements
+- Requires plib 1.8.5, FreeGLUT or GLUT, be aware to compile plib with -fPIC
+  on AMD64 if you run a 64 bit version of Linux. Be aware that maybe just
+  1.8.5 works.
+
+### Installation
+```
+git clone https://github.com/DamienLancry/blocking_torcs
+```
+```
+./configure --prefix=/HOME/.torcs --exec-prefix=/HOME/.torcs
+```
+(use --help for showing the options, of interest might be
+  --enable-debug and --disable-xrandr).
+```
+make
+make install
+make datainstall
+```
+To benefit from the text mode when training your agents, you need to modify the configuration file located in 
+/HOME/.torcs/config/raceman/quickrace.xml or /HOME/.torcs/config/raceman/practice.xml . You can easier directly edit it to modify it, or you can navigate in torcs GUI by launching
+```
+torcs
+```
+and then going 
+### Testing 
+
+## Original TORCS Readme file:
 
 1.  Introduction
 2.  Non-Free content (in GPL sense)
