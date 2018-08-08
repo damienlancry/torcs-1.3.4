@@ -1,3 +1,5 @@
+# Blocking TORCS
+
 This a modified version of an all in one package of TORCS specially conceived to make its behavior closer to an OpenAI Gym 
 environment easier to apply Reinforcement Learning to TORCS. The one and only modification stands in src/scr_server/scr_server.cpp . 
 
@@ -6,6 +8,8 @@ wait 10 ms for the client control command. If it received a new action within 10
 and then sends the new server state to the client. Otherwise, the last action received is applied again.
 
 In this modified version, the server waits indefinitely for the client control command, as would do any gym environments.
+
+Original TORCS Readme file:
 
 1.  Introduction
 2.  Non-Free content (in GPL sense)
