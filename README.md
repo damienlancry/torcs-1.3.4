@@ -35,8 +35,14 @@ To benefit from the text mode when training your agents, you need to modify the 
 ```
 torcs
 ```
-and then going 
+and then going through Race -> Quick Race -> Configure Race -> Accept
+There should be no drivers selected, and ten instances of scr_server in not selected. 
+Select a driver, for example 
+
 ### Testing 
+
+To test that everything is fine select a driver 
+You can test that everything is working fine
 
 ## Original TORCS Readme file:
 
