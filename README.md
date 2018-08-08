@@ -1,13 +1,13 @@
 # Blocking TORCS
 
 This a modified version of an all in one package of TORCS specially conceived to make its behavior closer to an OpenAI Gym 
-environment easier to apply Reinforcement Learning to TORCS. The one and only modification stands in src/scr_server/scr_server.cpp . 
+environment and make it easier to apply Reinforcement Learning to TORCS. The one and only modification stands in src/scr_server/scr_server.cpp . 
 
 In the original version, the server used to 
 wait 10 ms for the client control command. If it received a new action within 10 ms it would apply this action in the simulator 
-and then sends the new server state to the client. Otherwise, the last action received is applied again.
+and then sends the new server state to the client. Otherwise, the last action received would be applied again.
 
-In this modified version, the server waits indefinitely for the client control command, as would do any gym environments.
+In this modified version, the server waits indefinitely for the client control command, as would do any OpenAI gym environment.
 
 ## Getting Started:
 
@@ -30,13 +30,13 @@ make install
 make datainstall
 ```
 To benefit from the text mode when training your agents, you need to modify the configuration file located in 
-/HOME/.torcs/config/raceman/quickrace.xml or $HOME/.torcs/config/raceman/practice.xml . You can easier directly edit it to modify it, or you can navigate in torcs GUI by launching
+/HOME/.torcs/config/raceman/quickrace.xml or $HOME/.torcs/config/raceman/practice.xml . You can directly edit it to modify it, or you can navigate in torcs GUI by launching
 ```
 torcs
 ```
 and then going through Race -> Quick Race -> Configure Race -> Accept
 There should be no drivers selected, and ten instances of scr_server in not selected. 
-Select a driver, for example ''damned 1''.
+Select a driver, for example ''damned 1'' for testing as in the following section or ''scr_server 1''.
 
 ### Testing 
 
@@ -44,6 +44,10 @@ To test that everything is fine:
 ```
 torcs -r $HOME/.torcs/config/raceman/quickrace.xml
 ```
+
+## Further information
+
+https://arxiv.org/pdf/1304.1672.pdf
 
 ## Original TORCS Readme file:
 
