@@ -1,4 +1,4 @@
-# Blocking TORCS
+# blocking_torcs
 
 This a modified version of an all in one package of TORCS specially conceived to make its behavior closer to an OpenAI Gym 
 environment and make it easier to apply Reinforcement Learning (RL) to TORCS. The one and only modification stands in src/scr_server/scr_server.cpp . 
@@ -7,7 +7,7 @@ In the original version, the server used to
 wait 10 ms for the client control command. If it received a new action within 10 ms it would apply this action in the simulator 
 and then sends the new server state to the client. Otherwise, the last action received would be applied again.
 
-In this modified version, the server waits indefinitely for the client control command, as would do any OpenAI gym environment. 
+In this modified version, the server waits indefinitely for the client control command, as would do any OpenAI gym environment. Therefore, I called it blocking_torcs.
 
 I jointly wrote a Python Class ```TorcsEnv``` actually inheriting from the Class ```gym.Env``` making it really easy to apply existing implementations of RL algorithms to this environment. Available at https://github.com/DamienLancry/gym_torcs .
 
@@ -32,7 +32,7 @@ make install
 make datainstall
 ```
 To benefit from the text mode when training your agents, you need to modify the configuration file located in 
-/HOME/.torcs/config/raceman/quickrace.xml or $HOME/.torcs/config/raceman/practice.xml . You can directly edit it to modify it, or you can navigate in torcs GUI by launching
+$HOME/.torcs/config/raceman/quickrace.xml or $HOME/.torcs/config/raceman/practice.xml . You can directly edit it to modify it, or you can navigate in torcs GUI by launching
 ```
 torcs
 ```
