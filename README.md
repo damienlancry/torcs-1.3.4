@@ -19,9 +19,8 @@ In this modified version, the server waits indefinitely for the client control c
 ### Installation
 ```
 git clone https://github.com/DamienLancry/blocking_torcs
-```
-```
-./configure --prefix=/HOME/.torcs --exec-prefix=/HOME/.torcs
+cd blocking_torcs
+./configure --prefix=$HOME/.torcs --exec-prefix=$HOME/.torcs
 ```
 (use --help for showing the options, of interest might be
   --enable-debug and --disable-xrandr).
@@ -31,18 +30,20 @@ make install
 make datainstall
 ```
 To benefit from the text mode when training your agents, you need to modify the configuration file located in 
-/HOME/.torcs/config/raceman/quickrace.xml or /HOME/.torcs/config/raceman/practice.xml . You can easier directly edit it to modify it, or you can navigate in torcs GUI by launching
+/HOME/.torcs/config/raceman/quickrace.xml or $HOME/.torcs/config/raceman/practice.xml . You can easier directly edit it to modify it, or you can navigate in torcs GUI by launching
 ```
 torcs
 ```
 and then going through Race -> Quick Race -> Configure Race -> Accept
 There should be no drivers selected, and ten instances of scr_server in not selected. 
-Select a driver, for example 
+Select a driver, for example ''damned 1''.
 
 ### Testing 
 
-To test that everything is fine select a driver 
-You can test that everything is working fine
+To test that everything is fine:
+```
+torcs -r $HOME/.torcs/config/raceman/quickrace.xml
+```
 
 ## Original TORCS Readme file:
 
