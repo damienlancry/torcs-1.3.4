@@ -31,16 +31,7 @@ make
 make install
 make datainstall
 ```
-To benefit from the text mode when training your agents, you need to modify the configuration file located in 
-$HOME/.torcs/config/raceman/quickrace.xml or $HOME/.torcs/config/raceman/practice.xml . You can directly edit it to modify it, or you can navigate in torcs GUI by launching
-```
-torcs
-```
-and then going through Race -> Quick Race -> Configure Race -> Accept
-There should be no drivers selected, and ten instances of scr_server in not selected. 
-Select a driver, for example ''damned 1'' for testing as in the following section or ''scr_server 1'' for using https://github.com/DamienLancry/gym_torcs.
-
-Finally you need to add torcs to your path:
+Then you need to add torcs to your path:
 ```
 export PATH=$HOME/.torcs/bin:~/bin:$PATH
 ```
@@ -49,6 +40,14 @@ If you do not want to do it everytime you want to use torcs, add it to your bash
 echo 'export PATH=$HOME/.torcs/bin:~/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc 
 ```
+To benefit from the text mode when training your agents, you need to modify the configuration file located in 
+$HOME/.torcs/config/raceman/quickrace.xml or $HOME/.torcs/config/raceman/practice.xml . You can directly edit it to modify it, or you can navigate in torcs GUI by launching
+```
+torcs
+```
+and then going through Race -> Quick Race -> Configure Race -> Accept
+There should be no drivers selected, and ten instances of scr_server in not selected. 
+Select a driver, for example ''damned 1'' for testing as in the following section or ''scr_server 1'' for using https://github.com/DamienLancry/gym_torcs.
 
 ### Testing 
 
