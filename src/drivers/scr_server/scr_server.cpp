@@ -252,7 +252,7 @@ newrace(int index, tCarElt* car, tSituation *s)
     // Loop until a client identifies correctly
     while (!identified)
     {
-        //std::cout << "!identified" << "\n";
+        std::cout << "!identified" << "\n";
 
         clientAddressLength[index] = sizeof(clientAddress[index]);
 
@@ -327,6 +327,11 @@ drive(int index, tCarElt* car, tSituation *s)
 {
 
     total_tics[index]++;
+    std::cout << total_tics[index] ;
+    std::cout << "  distRACED  " << car->race.distFromStartLine;
+    std::cout << " / " << curTrack->length;
+    std::cout << "  distRACED     " << distRaced[index];
+    std::cout << " / " << curTrack->length << std::endl;
 
 #ifdef __PRINT_RACE_RESULTS__
     bestLap[index]=car->_bestLapTime;
@@ -481,9 +486,9 @@ drive(int index, tCarElt* car, tSituation *s)
     // if (getDamageLimit())
 	  //   stateString += SimpleParser::stringify("damage", car->_dammage);
     // else
-	  //   stateString += SimpleParser::stringify("damage", car->_fakeDammage);
-    // stateString += SimpleParser::stringify("distFromStart", car->race.distFromStartLine);
-    // stateString += SimpleParser::stringify("distRaced", distRaced[index]);
+	  stateString += SimpleParser::stringify("damage", car->_fakeDammage);
+    stateString += SimpleParser::stringify("distFromStart", car->race.distFromStartLine);
+    stateString += SimpleParser::stringify("distRaced", distRaced[index]);
     // stateString += SimpleParser::stringify("fuel", car->_fuel);
     // stateString += SimpleParser::stringify("gear", car->_gear);
     // stateString += SimpleParser::stringify("lastLapTime", float(car->_lastLapTime));
@@ -493,11 +498,11 @@ drive(int index, tCarElt* car, tSituation *s)
     stateString += SimpleParser::stringify("speedX", float(car->_speed_x  * 3.6));
     stateString += SimpleParser::stringify("speedY", float(car->_speed_y  * 3.6));
     // stateString += SimpleParser::stringify("speedZ", float(car->_speed_z  * 3.6));
-    // stateString += SimpleParser::stringify("track", trackSensorOut, 19);
+    stateString += SimpleParser::stringify("track", trackSensorOut, 19);
     stateString += SimpleParser::stringify("trackPos", dist_to_middle);
     // stateString += SimpleParser::stringify("wheelSpinVel", wheelSpinVel, 4);
     // stateString += SimpleParser::stringify("z", car->_pos_Z  - RtTrackHeightL(&(car->_trkPos)));
-	// stateString += SimpleParser::stringify("focus", focusSensorOut, 5);//ML
+	  // stateString += SimpleParser::stringify("focus", focusSensorOut, 5);//ML
 
     char line[UDP_MSGLEN];
     sprintf(line,"%s",stateString.c_str());
@@ -557,15 +562,15 @@ if (RESTARTING[index]==0)
                 exit(1);
             }
 
-    // #ifdef __UDP_SERVER_VERBOSE__
+    #ifdef __UDP_SERVER_VERBOSE__
             std::cout << "Received: " << line << std::endl;
-    // #endif
+    #endif
 
             std::string lineStr(line);
             CarControl carCtrl(lineStr);
             if (carCtrl.getMeta()==RACE_RESTART)
             {
-             	RESTARTING[index] = 1;
+              RESTARTING[index] = 1;
     #ifdef __DISABLE_RESTART__
     	        char line[UDP_MSGLEN];
             	sprintf(line,"***restart***");
@@ -680,8 +685,6 @@ if (curPosition==max_pos)
 	fprintf(f,"\n\n\n");
 	fclose(f);
 }
-//std::cout << "car,pos,points,time,bestLap,damages"<< std::endl;
-//std::cout << "champ" << (index+1) <<"," << position <<"," << points[position-1] <<"," << totalTime[index] <<"," << bestLap[index] <<"\t" << damages[index]<< std::endl;
 #endif
 
     if (RESTARTING[index]!=1)
@@ -689,6 +692,7 @@ if (curPosition==max_pos)
 
         char line[UDP_MSGLEN];
         sprintf(line,"***shutdown***");
+        std::cout << "Sending: " << line << std::endl;
         // Sending the car state to the client
         if (sendto(listenSocket[index], line, strlen(line) + 1, 0,
                    (struct sockaddr *) &clientAddress[index],
