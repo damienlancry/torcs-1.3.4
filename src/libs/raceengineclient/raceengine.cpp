@@ -2,8 +2,8 @@
 
     file        : raceengine.cpp
     created     : Sat Nov 23 09:05:23 CET 2002
-    copyright   : (C) 2002 by Eric Espié 
-    email       : eric.espie@torcs.org 
+    copyright   : (C) 2002 by Eric Espié
+    email       : eric.espie@torcs.org
     version     : $Id: raceengine.cpp,v 1.19.2.10 2012/10/03 07:18:49 berniw Exp $
 
  ***************************************************************************/
@@ -17,8 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-/** @file   
-    		
+/** @file
+
     @author	<a href=mailto:eric.espie@torcs.org>Eric Espie</a>
     @version	$Id: raceengine.cpp,v 1.19.2.10 2012/10/03 07:18:49 berniw Exp $
 */
@@ -343,8 +343,8 @@ ReManage(tCarElt *car)
 			info->lapFlag++;
 		}
 	}
-	ReRaceRules(car);
-	
+	// ReRaceRules(car);
+
 	info->prevTrkPos = car->_trkPos;
 	car->_curLapTime = s->currentTime - info->sTime;
 	car->_distFromStartLine = car->_trkPos.seg->lgfromstart +
