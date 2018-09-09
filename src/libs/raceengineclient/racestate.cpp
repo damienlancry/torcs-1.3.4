@@ -118,7 +118,7 @@ ReStateManage(void)
 						// GfuiScreenActivate(ReInfo->_reGameScreen);
 						// END DEBUG
 						// BEGIN VISION
-						GfuiScreenActivate(ReInfo->_reGameScreen);
+						// GfuiScreenActivate(ReInfo->_reGameScreen);
 						// END VISION
 					}
 					else

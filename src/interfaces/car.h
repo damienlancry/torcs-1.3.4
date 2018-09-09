@@ -390,28 +390,28 @@ typedef struct
 
 
 // BEGIN VISION
-typedef struct RmMovieCapture
-{
-    int		enabled;
-    int		state;
-    double	deltaSimu;
-    double	deltaFrame;
-    double	lastFrame;
-    char	*outputBase;
-    int		currentCapture;
-    int		currentFrame;
-} tRmMovieCapture;
+// typedef struct RmMovieCapture
+// {
+//     int		enabled;
+//     int		state;
+//     double	deltaSimu;
+//     double	deltaFrame;
+//     double	lastFrame;
+//     char	*outputBase;
+//     int		currentCapture;
+//     int		currentFrame;
+// } tRmMovieCapture;
+//
+// // Visual information for the car - img represents the present screenshot
+// typedef struct RmVisionImg
+// {
+//     int	 sw, sh, vw, vh;
+//     unsigned int imgsize;
+//     unsigned char* img;
+//
+// } tRmVisionImg;
 
-// Visual information for the car - img represents the present screenshot
-typedef struct RmVisionImg
-{
-    int	 sw, sh, vw, vh;
-    unsigned int imgsize;
-    unsigned char* img;
-
-} tRmVisionImg;
-
-// END sVISION
+// END VISION
 
 /** Car structure (tCarElt).
     This is the main car structure, used everywhere in the code.

@@ -529,8 +529,8 @@ drive(int index, tCarElt* car, tSituation *s)
 	  // stateString += SimpleParser::stringify("focus", focusSensorOut, 5);//ML
 
     // BEGIN VISON
-    stateString += SimpleParser::stringify("img", car->vision->img, car->vision->imgsize);
-    // END VISON 
+    // stateString += SimpleParser::stringify("img", car->vision->img, car->vision->imgsize);
+    // END VISON
 
 
     char line[UDP_MSGLEN];
