@@ -118,10 +118,10 @@ ReRaceEventInit(void)
 		ReInfo->_reGraphicItf.inittrack(ReInfo->track);
 	};
 	// BEGIN VISION
-	// else if (ReInfo->_reGraphicItf.inittrack != 0)
-	// {
-	//  ReInfo->_reGraphicItf.inittrack(ReInfo->track);
-	// }
+	else if (ReInfo->_reGraphicItf.inittrack != 0)
+	{
+	 ReInfo->_reGraphicItf.inittrack(ReInfo->track);
+	}
 	// END VISION
 	ReEventInitResults();
 
@@ -221,12 +221,12 @@ reRaceRealStart(void)
 		}
 	}
 	// BEGIN VISION
-	// else {
-	// 	ReInfo->_displayMode = RM_DISP_MODE_NORMAL;
-	// 	ReInfo->_reGameScreen = ReScreenInit();
-	// 	ReInfo->_displayMode = RM_DISP_MODE_NONE;
-	// 	ReInfo->_reGameScreen = ReResScreenInit();
-	// }
+	else {
+		ReInfo->_displayMode = RM_DISP_MODE_NORMAL;
+		ReInfo->_reGameScreen = ReScreenInit();
+		ReInfo->_displayMode = RM_DISP_MODE_NONE;
+		ReInfo->_reGameScreen = ReResScreenInit();
+	}
 	// END VISION
 
 
@@ -289,12 +289,12 @@ reRaceRealStart(void)
 		GfuiScreenActivate(ReInfo->_reGameScreen);
 	}
 	// BEGIN VISION
-  // else
-	// {
-	// 	GfScrGetSize(&sw, &sh, &vw, &vh);
-	// 	ReInfo->_reGraphicItf.initview((sw-vw)/2, (sh-vh)/2, vw, vh, GR_VIEW_STD, ReInfo->_reGameScreen);
-	// 	ReInfo->_reGraphicItf.initcars(s);
-	// }
+  else
+	{
+		GfScrGetSize(&sw, &sh, &vw, &vh);
+		ReInfo->_reGraphicItf.initview((sw-vw)/2, (sh-vh)/2, vw, vh, GR_VIEW_STD, ReInfo->_reGameScreen);
+		ReInfo->_reGraphicItf.initcars(s);
+	}
 	// END VISION
 
 	return RM_SYNC | RM_NEXT_STEP;
@@ -411,10 +411,10 @@ ReRaceStart(void)
 		}
 	}
 	// BEGIN VISION
-	// else
-	// {
-	// 	RmDisplayStartRace(ReInfo, StartRaceHookInit(), AbandonRaceHookInit());
-	// }
+	else
+	{
+		RmDisplayStartRace(ReInfo, StartRaceHookInit(), AbandonRaceHookInit());
+	}
 	// END VISION
 
 	return reRaceRealStart();

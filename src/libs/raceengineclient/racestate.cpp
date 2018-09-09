@@ -114,11 +114,11 @@ ReStateManage(void)
 						RESTART=0;
 						ReRaceCleanup();
 						ReInfo->_reState = RE_STATE_PRE_RACE;
-						// BEGIN DEBUG: Could not use 'meta' = 1 in text mode maybe because of this
+						// BEGIN DEBUG ??: Could not use 'meta' = 1 in text mode maybe because of this
 						// GfuiScreenActivate(ReInfo->_reGameScreen);
-						// END DEBUG
+						// END DEBUG ??
 						// BEGIN VISION
-						// GfuiScreenActivate(ReInfo->_reGameScreen);
+						GfuiScreenActivate(ReInfo->_reGameScreen);
 						// END VISION
 					}
 					else
