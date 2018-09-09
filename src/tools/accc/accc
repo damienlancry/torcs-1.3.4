@@ -18,8 +18,8 @@
 #
 ##############################################################################
 
-prefix=/home/lancry/.torcs
-exec_prefix=/home/lancry/.torcs
+prefix=/homes/drl17/.torcs
+exec_prefix=/homes/drl17/.torcs
 
 BINDIR=${exec_prefix}/bin
 LIBDIR=${exec_prefix}/lib/torcs

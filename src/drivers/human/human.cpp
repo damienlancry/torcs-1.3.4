@@ -17,8 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-/** @file   
-    		
+/** @file
+
     @author	<a href=mailto:torcs@free.fr>Eric Espie</a>
     @version	$Id: human.cpp,v 1.45.2.10 2012/05/31 23:16:57 berniw Exp $
 */
@@ -29,6 +29,7 @@
 #define isnan _isnan
 #endif
 
+#include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -266,7 +267,7 @@ static void initTrack(int index, tTrack* track, void *carHandle, void **carParmH
 	const int BUFSIZE = 1024;
 	char buf[BUFSIZE];
 	char sstring[BUFSIZE];
-	
+
 	const int TRACKNAMESIZE = 256;
 	char trackname[TRACKNAMESIZE];
 	tdble fuel;
@@ -399,10 +400,10 @@ void newrace(int index, tCarElt* car, tSituation *s)
 		HCtx[idx]->drivetrain = DFWD;
 	} else if (strcmp(traintype, VAL_TRANS_4WD) == 0) {
 		HCtx[idx]->drivetrain = D4WD;
-	} 
+	}
 
 	tControlCmd	*cmd = HCtx[idx]->CmdControl;
-	if (cmd[CMD_CLUTCH].type != GFCTRL_TYPE_JOY_AXIS && 
+	if (cmd[CMD_CLUTCH].type != GFCTRL_TYPE_JOY_AXIS &&
 			cmd[CMD_CLUTCH].type != GFCTRL_TYPE_MOUSE_AXIS)
 		HCtx[idx]->autoClutch = 1;
 	else
@@ -506,7 +507,7 @@ static void common_drive(int index, tCarElt* car, tSituation *s)
 		firstTime = 0;
     }
 
-
+	std::cout << "  distRACED  " << HCtx[idx]->distToStart << std::endl;
 	HCtx[idx]->distToStart = RtGetDistFromStart(car);
 
 	HCtx[idx]->Gear = (tdble)car->_gear;	/* telemetry */
@@ -588,7 +589,7 @@ static void common_drive(int index, tCarElt* car, tSituation *s)
 			} else if (ax0 < cmd[CMD_LEFTSTEER].min) {
 				ax0 = cmd[CMD_LEFTSTEER].min;
 			}
-			
+
 			// normalize ax0 to -1..0
 			ax0 = (ax0 - cmd[CMD_LEFTSTEER].max) / (cmd[CMD_LEFTSTEER].max - cmd[CMD_LEFTSTEER].min);
 			leftSteer = -SIGN(ax0) * cmd[CMD_LEFTSTEER].pow * pow(fabs(ax0), cmd[CMD_LEFTSTEER].sens) / (1.0 + cmd[CMD_LEFTSTEER].spdSens * car->_speed_x);
@@ -636,7 +637,7 @@ static void common_drive(int index, tCarElt* car, tSituation *s)
 			} else if (ax0 < cmd[CMD_RIGHTSTEER].min) {
 				ax0 = cmd[CMD_RIGHTSTEER].min;
 			}
-			
+
 			// normalize ax to 0..1
 			ax0 = (ax0 - cmd[CMD_RIGHTSTEER].min) / (cmd[CMD_RIGHTSTEER].max - cmd[CMD_RIGHTSTEER].min);
 			rightSteer = -SIGN(ax0) * cmd[CMD_RIGHTSTEER].pow * pow(fabs(ax0), cmd[CMD_RIGHTSTEER].sens) / (1.0 + cmd[CMD_RIGHTSTEER].spdSens * car->_speed_x);
@@ -810,7 +811,7 @@ static void common_drive(int index, tCarElt* car, tSituation *s)
 	if (s->currentTime > 1.0) {
 		// thanks Christos for the following: gradual accel/brake changes for on/off controls.
 		const tdble inc_rate = 0.2f;
-		
+
 		if (cmd[CMD_BRAKE].type == GFCTRL_TYPE_JOY_BUT ||
 		    cmd[CMD_BRAKE].type == GFCTRL_TYPE_MOUSE_BUT ||
 		    cmd[CMD_BRAKE].type == GFCTRL_TYPE_KEYBOARD ||
@@ -843,7 +844,7 @@ static void common_drive(int index, tCarElt* car, tSituation *s)
 		car->_accelCmd = brake;
 	}
 
-	if (HCtx[idx]->ParamAbs) 
+	if (HCtx[idx]->ParamAbs)
 	{
 		if (fabs(car->_speed_x) > 10.0)
 		{
@@ -876,7 +877,7 @@ static void common_drive(int index, tCarElt* car, tSituation *s)
 	}
 
 
-	if (HCtx[idx]->ParamAsr) 
+	if (HCtx[idx]->ParamAsr)
 	{
     	tdble trackangle = RtTrackSideTgAngleL(&(car->_trkPos));
 		tdble angle = trackangle - car->_yaw;
@@ -913,7 +914,7 @@ static void common_drive(int index, tCarElt* car, tSituation *s)
 				drivespeed = ((car->_wheelSpinVel(FRNT_RGT) + car->_wheelSpinVel(FRNT_LFT)) *
 				              car->_wheelRadius(FRNT_LFT) +
 				              (car->_wheelSpinVel(REAR_RGT) + car->_wheelSpinVel(REAR_LFT)) *
-				              car->_wheelRadius(REAR_LFT)) / 4.0; 
+				              car->_wheelRadius(REAR_LFT)) / 4.0;
 				break;
 			case DFWD:
 				drivespeed = (car->_wheelSpinVel(FRNT_RGT) + car->_wheelSpinVel(FRNT_LFT)) *
@@ -975,7 +976,7 @@ static tdble getAutoClutch(int idx, int gear, int newgear, tCarElt *car)
 			HCtx[idx]->clutchtime -= RCM_MAX_DT_ROBOTS;
 		return 2.0f * HCtx[idx]->clutchtime;
 	}
-	
+
 	return 0.0f;
 }
 
@@ -993,7 +994,7 @@ static tdble getAutoClutch(int idx, int gear, int newgear, tCarElt *car)
  *
  *
  * Remarks
- *	
+ *
  */
 static void drive_mt(int index, tCarElt* car, tSituation *s)
 {
@@ -1060,10 +1061,10 @@ static void drive_mt(int index, tCarElt* car, tSituation *s)
  *
  *
  * Return
- *	
+ *
  *
  * Remarks
- *	
+ *
  */
 static void drive_at(int index, tCarElt* car, tSituation *s)
 {
@@ -1207,4 +1208,3 @@ static int pitcmd(int index, tCarElt* car, tSituation *s)
 
 	return ROB_PIT_MENU; /* The player is able to modify the value by menu */
 }
-

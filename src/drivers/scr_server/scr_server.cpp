@@ -13,6 +13,10 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+#define isnan _isnan
+#include <GL/glut.h>
+
+// #define	unsigned char *img;
 
 #ifdef _WIN32
 #include <windows.h>
@@ -57,7 +61,7 @@ typedef struct sockaddr_in tSockAddrIn;
 #endif
 
 /*** defines for UDP *****/
-#define UDP_LISTEN_PORT 3001
+#define UDP_DEFAULT_LISTEN_PORT 3001
 #define UDP_ID "SCR"
 #define UDP_DEFAULT_TIMEOUT 10000
 #define UDP_MSGLEN 1000
@@ -65,6 +69,7 @@ typedef struct sockaddr_in tSockAddrIn;
 /************************/
 
 static int UDP_TIMEOUT = UDP_DEFAULT_TIMEOUT;
+static int UDP_LISTEN_PORT = UDP_DEFAULT_LISTEN_PORT;
 
 #define NBBOTS 10
 
@@ -208,6 +213,10 @@ newrace(int index, tCarElt* car, tSituation *s)
     if (getTimeout()>0)
     	UDP_TIMEOUT = getTimeout();
 
+    // Set port
+    if (getListenPort()>0)
+    	UDP_LISTEN_PORT = getListenPort();
+
     //Set sensor range
     if (strcmp(getVersion(),"2009")==0)
     {
@@ -222,7 +231,7 @@ newrace(int index, tCarElt* car, tSituation *s)
     	exit(0);
     }
 
-    listenSocket[index] = socket(AF_INET, SOCK_DGRAM, 0);
+    listenSocket[index] = socket(AF_INET, SOCK_DGRAM, 0);  // Create socket
     if (listenSocket[index] < 0)
     {
         std::cerr << "Error: cannot create listenSocket!";
@@ -247,12 +256,12 @@ newrace(int index, tCarElt* car, tSituation *s)
     // Wait for connections from clients.
     listen(listenSocket[index], 5);
 
-    std::cout << "Waiting for request on port " << UDP_LISTEN_PORT+index << "\n";
+    // std::cout << "Waiting for request on port " << UDP_LISTEN_PORT+index << "\n";
 
     // Loop until a client identifies correctly
     while (!identified)
     {
-        std::cout << "!identified" << "\n";
+        // std::cout << "!identified" << "\n";
 
         clientAddressLength[index] = sizeof(clientAddress[index]);
 
@@ -262,7 +271,7 @@ newrace(int index, tCarElt* car, tSituation *s)
                      (struct sockaddr *) &clientAddress[index],
                      &clientAddressLength[index]) < 0)
         {
-            std::cerr << "Error: problem in receiving from the listen socket";
+            std::cout << "Error: problem in receiving from the listen socket";
             exit(1);
         }
 
@@ -325,14 +334,13 @@ newrace(int index, tCarElt* car, tSituation *s)
 static void
 drive(int index, tCarElt* car, tSituation *s)
 {
-
-    total_tics[index]++;
-    std::cout << total_tics[index] ;
-    std::cout << "  distRACED  " << car->race.distFromStartLine;
-    std::cout << " / " << curTrack->length;
-    std::cout << "  distRACED     " << distRaced[index];
-    std::cout << " / " << curTrack->length << std::endl;
-
+  // if(UDP_LISTEN_PORT==3001){
+    // std::cout << total_tics[index] ;
+    // std::cout << "  distRACED  " << car->race.distFromStartLine;
+    // std::cout << " / " << curTrack->length;
+    // std::cout << "  distRACED     " << distRaced[index];
+    // std::cout << " / " << curTrack->length << std::endl;
+// }
 #ifdef __PRINT_RACE_RESULTS__
     bestLap[index]=car->_bestLapTime;
     damages[index]=car->_dammage;
@@ -352,7 +360,7 @@ drive(int index, tCarElt* car, tSituation *s)
                      (struct sockaddr *) &clientAddress[index],
                      &clientAddressLength[index]) < 0)
         {
-            std::cerr << "Error: problem in receiving from the listen socket";
+            std::cout << "Error: problem in receiving from the listen socket";
             exit(1);
         }
 
@@ -441,7 +449,6 @@ drive(int index, tCarElt* car, tSituation *s)
 			focusSensorOut[i] = -1;
 		}
     }
-
     // update the value of opponent sensors
     float oppSensorOut[36];
     oppSens[index]->sensors_update(s);
@@ -474,13 +481,30 @@ drive(int index, tCarElt* car, tSituation *s)
     }
 
     distRaced[index] += curDistRaced;
+    int sw, vw, vh, sh;
+    sw = vw = vh = sh = 64;
+    unsigned char *img;
+    img = (unsigned char*)malloc(vw * vh * 3);
+    // std::cout<< img << std::endl;
+    // glPixelStorei(GL_PACK_ROW_LENGTH, 0);
+  	// glPixelStorei(GL_PACK_ALIGNMENT, 1);
+  	// glReadBuffer(GL_FRONT);
+    // glReadPixels((sw-vw)/2, (sh-vh)/2, vw, vh, GL_RGB, GL_UNSIGNED_BYTE, (GLvoid*)img);
+    // std::cout<< img << std::endl;
 
     /**********************************************************************
      ****************** Building state string *****************************
      **********************************************************************/
 
     string stateString;
-
+    // std::cout << total_tics[index] ;
+    // if (isnan(angle)) std::cout << car ;
+    // if (isnan(float(car->_speed_y  * 3.6))) std::cout << "' spy '"  << float(car->_speed_y  * 3.6) ;
+    // if (isnan(dist_to_middle)) std::cout << "' distmidlle '"  << dist_to_middle;
+    // // if (isnan(car->_fakeDammage)) std::cout << ' car->_fakeDammage '  << car->_fakeDammage;
+    // if (isnan(distRaced[index])) std::cout << "' distRaced[index] '"  << distRaced[index];
+    // if (isnan(float(car->_speed_x  * 3.6))) std::cout << "' float(car->_speed_x  * 3.6) '"  << float(car->_speed_x  * 3.6) << std::endl;
+    //
     stateString =  SimpleParser::stringify("angle", angle);
     // stateString += SimpleParser::stringify("curLapTime", float(car->_curLapTime));
     // if (getDamageLimit())
@@ -503,6 +527,11 @@ drive(int index, tCarElt* car, tSituation *s)
     // stateString += SimpleParser::stringify("wheelSpinVel", wheelSpinVel, 4);
     // stateString += SimpleParser::stringify("z", car->_pos_Z  - RtTrackHeightL(&(car->_trkPos)));
 	  // stateString += SimpleParser::stringify("focus", focusSensorOut, 5);//ML
+
+    // BEGIN VISON
+    stateString += SimpleParser::stringify("img", car->vision->img, car->vision->imgsize);
+    // END VISON 
+
 
     char line[UDP_MSGLEN];
     sprintf(line,"%s",stateString.c_str());

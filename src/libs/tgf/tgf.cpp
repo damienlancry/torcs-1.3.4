@@ -1,6 +1,6 @@
 /***************************************************************************
-                          tgf.cpp -- The Gaming Framework                            
-                             -------------------                                         
+                          tgf.cpp -- The Gaming Framework
+                             -------------------
     created              : Fri Aug 13 22:31:43 CEST 1999
     copyright            : (C) 1999 by Eric Espie
     email                : torcs@free.fr
@@ -337,7 +337,7 @@ int GfCreateDir(char *path)
 			buf[i] = DELIM;
 		}
 	}
-	
+
 #else // WIN32
 #define mkdir(x) mkdir((x), S_IRWXU);
 
@@ -370,6 +370,8 @@ static bool _fuelConsumption = true;
 static bool _laptimeLimit = true;
 /* timeout for UDP connection */
 static long int _timeout = -1;
+/* timeout for UDP connection */
+static short int _port = -1;
 
 /*version tag*/
 static char *_version;
@@ -409,6 +411,16 @@ void setTimeout(long int timeout)
 long int getTimeout()
 {
 	return _timeout;
+}
+/* Helper to set and get the timeout of UDP comm */
+void setListenPort(short int port)
+{
+	_port = port;
+}
+
+short int getListenPort()
+{
+	return _port;
 }
 
 void setVersion(char *version)

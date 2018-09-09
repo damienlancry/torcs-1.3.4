@@ -2,9 +2,9 @@
 
     file        : racemain.cpp
     created     : Sat Nov 16 12:13:31 CET 2002
-    copyright   : (C) 2002 by Eric Espi�                        
-    email       : eric.espie@torcs.org   
-    version     : $Id: racemain.cpp,v 1.13.2.5 2012/06/09 14:58:48 berniw Exp $                                  
+    copyright   : (C) 2002 by Eric Espi�
+    email       : eric.espie@torcs.org
+    version     : $Id: racemain.cpp,v 1.13.2.5 2012/06/09 14:58:48 berniw Exp $
 
  ***************************************************************************/
 
@@ -17,8 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-/** @file   
-    		
+/** @file
+
     @author	<a href=mailto:eric.espie@torcs.org>Eric Espie</a>
     @version	$Id: racemain.cpp,v 1.13.2.5 2012/06/09 14:58:48 berniw Exp $
 */
@@ -117,6 +117,9 @@ ReRaceEventInit(void)
 		RmLoadingScreenSetText("Loading Track 3D Description...");
 		ReInfo->_reGraphicItf.inittrack(ReInfo->track);
 	};
+	// BEGIN VISION
+	ReInfo->_reGraphicItf.inittrack(ReInfo->track);
+  // END VISION
 	ReEventInitResults();
 
 	if (
@@ -214,6 +217,15 @@ reRaceRealStart(void)
 			}
 		}
 	}
+	// BEGIN VISION
+	else {
+		ReInfo->_displayMode = RM_DISP_MODE_NORMAL;
+		ReInfo->_reGameScreen = ReScreenInit();
+		ReInfo->_displayMode = RM_DISP_MODE_NONE;
+		ReInfo->_reGameScreen = ReResScreenInit();
+	}
+	// END VISION
+
 
 	if (!(ReInfo->s->_raceType == RM_TYPE_QUALIF) ||
 	((int)GfParmGetNum(results, RE_SECT_CURRENT, RE_ATTR_CUR_DRIVER, NULL, 1) == 1))
@@ -273,6 +285,14 @@ reRaceRealStart(void)
 
 		GfuiScreenActivate(ReInfo->_reGameScreen);
 	}
+	// BEGIN VISION
+  else
+	{
+		GfScrGetSize(&sw, &sh, &vw, &vh);
+		ReInfo->_reGraphicItf.initview((sw-vw)/2, (sh-vh)/2, vw, vh, GR_VIEW_STD, ReInfo->_reGameScreen);
+		ReInfo->_reGraphicItf.initcars(s);
+	}
+	// END VISION
 
 	return RM_SYNC | RM_NEXT_STEP;
 }
@@ -387,6 +407,12 @@ ReRaceStart(void)
 			return RM_ASYNC | RM_NEXT_STEP;
 		}
 	}
+	// BEGIN VISION
+	else
+	{
+		RmDisplayStartRace(ReInfo, StartRaceHookInit(), AbandonRaceHookInit());
+	}
+	// END VISION
 
 	return reRaceRealStart();
 }
@@ -585,4 +611,3 @@ ReEventShutdown(void)
 
 	return RM_SYNC | ret;
 }
-

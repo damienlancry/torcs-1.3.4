@@ -186,8 +186,8 @@ typedef struct {
 
 /** Public info on the cars */
 typedef struct {
-    tDynPt	DynGC;		/**< GC data (car axis) */    
-    tDynPt	DynGCg;		/**< GC data (world axis) */    
+    tDynPt	DynGC;		/**< GC data (car axis) */
+    tDynPt	DynGCg;		/**< GC data (world axis) */
     sgMat4	posMat;		/**< position matrix */
     tTrkLocPos	trkPos;		/**< current track position. The segment is the track segment (not sides)*/
     int		state;	    	/**< state of the car.
@@ -309,7 +309,7 @@ typedef struct {
 	float   smoke;
     t3Dd	normal;
     t3Dd	collpos;        /**< Collision position, useful for sound*/
-    int     fakeDammage;    
+    int     fakeDammage;
     int		dammage;
     int		debug;
 	tCollisionState collision_state; /**< collision state */
@@ -376,7 +376,7 @@ typedef struct {
 struct RobotItf;
 
 /** Command issued by the car during pit stop */
-typedef struct 
+typedef struct
 {
     tdble		fuel;
     int			repair;
@@ -388,6 +388,30 @@ typedef struct
 #define _pitRepair	pitcmd.repair
 #define _pitStopType	pitcmd.stopType
 
+
+// BEGIN VISION
+typedef struct RmMovieCapture
+{
+    int		enabled;
+    int		state;
+    double	deltaSimu;
+    double	deltaFrame;
+    double	lastFrame;
+    char	*outputBase;
+    int		currentCapture;
+    int		currentFrame;
+} tRmMovieCapture;
+
+// Visual information for the car - img represents the present screenshot
+typedef struct RmVisionImg
+{
+    int	 sw, sh, vw, vh;
+    unsigned int imgsize;
+    unsigned char* img;
+
+} tRmVisionImg;
+
+// END sVISION
 
 /** Car structure (tCarElt).
     This is the main car structure, used everywhere in the code.
@@ -404,7 +428,7 @@ typedef struct CarElt
     struct RobotItf	*robot;	/**< private */
     struct CarElt	*next;
     int         RESTART;
-    int         RESET;    
+    int         RESET;
 } tCarElt;
 
 
@@ -626,7 +650,4 @@ typedef struct CarElt
 #define SEM_COLLISION_Z_CRASH	0x10
 
 
-#endif /* __CARV1_H__ */ 
-
-
-
+#endif /* __CARV1_H__ */

@@ -32,7 +32,7 @@ damned.o: damned.cpp /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/lancry/torcs-1.3.4/export/include/tgf.h \
+ /homes/drl17/torcs-1.3.4/export/include/tgf.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
@@ -55,15 +55,17 @@ damned.o: damned.cpp /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h \
- /usr/include/string.h /home/lancry/torcs-1.3.4/export/include/osspec.h \
- /home/lancry/torcs-1.3.4/export/include/track.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/linalg_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v2_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v3_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v4_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/straight2_t.h \
- /home/lancry/torcs-1.3.4/export/include/car.h /usr/include/plib/sg.h \
- /usr/include/plib/ul.h /usr/include/ctype.h /usr/include/unistd.h \
+ /usr/include/string.h /homes/drl17/torcs-1.3.4/export/include/osspec.h \
+ /homes/drl17/torcs-1.3.4/export/include/track.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/linalg_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v3_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v4_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/straight2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/car.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/sg.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/ul.h \
+ /usr/include/ctype.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
@@ -76,13 +78,13 @@ damned.o: damned.cpp /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/lancry/torcs-1.3.4/export/include/raceman.h \
- /home/lancry/torcs-1.3.4/export/include/graphic.h \
- /home/lancry/torcs-1.3.4/export/include/simu.h \
- /home/lancry/torcs-1.3.4/export/include/robottools.h \
- /home/lancry/torcs-1.3.4/export/include/robot.h driver.h \
- /home/lancry/torcs-1.3.4/export/include/portability.h \
- /home/lancry/torcs-1.3.4/config.h opponent.h cardata.h pit.h spline.h \
+ /homes/drl17/torcs-1.3.4/export/include/raceman.h \
+ /homes/drl17/torcs-1.3.4/export/include/graphic.h \
+ /homes/drl17/torcs-1.3.4/export/include/simu.h \
+ /homes/drl17/torcs-1.3.4/export/include/robottools.h \
+ /homes/drl17/torcs-1.3.4/export/include/robot.h driver.h \
+ /homes/drl17/torcs-1.3.4/export/include/portability.h \
+ /homes/drl17/torcs-1.3.4/config.h opponent.h cardata.h pit.h spline.h \
  learn.h strategy.h
 driver.o: driver.cpp /usr/include/stdc-predef.h driver.h \
  /usr/include/stdio.h /usr/include/features.h \
@@ -124,7 +126,7 @@ driver.o: driver.cpp /usr/include/stdc-predef.h driver.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/lancry/torcs-1.3.4/export/include/tgf.h \
+ /homes/drl17/torcs-1.3.4/export/include/tgf.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
@@ -143,15 +145,17 @@ driver.o: driver.cpp /usr/include/stdc-predef.h driver.h \
  /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
  /usr/include/x86_64-linux-gnu/asm/param.h \
  /usr/include/asm-generic/param.h /usr/include/assert.h \
- /home/lancry/torcs-1.3.4/export/include/osspec.h \
- /home/lancry/torcs-1.3.4/export/include/track.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/linalg_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v2_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v3_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v4_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/straight2_t.h \
- /home/lancry/torcs-1.3.4/export/include/car.h /usr/include/plib/sg.h \
- /usr/include/plib/ul.h /usr/include/ctype.h /usr/include/unistd.h \
+ /homes/drl17/torcs-1.3.4/export/include/osspec.h \
+ /homes/drl17/torcs-1.3.4/export/include/track.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/linalg_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v3_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v4_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/straight2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/car.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/sg.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/ul.h \
+ /usr/include/ctype.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
@@ -164,13 +168,13 @@ driver.o: driver.cpp /usr/include/stdc-predef.h driver.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/lancry/torcs-1.3.4/export/include/raceman.h \
- /home/lancry/torcs-1.3.4/export/include/graphic.h \
- /home/lancry/torcs-1.3.4/export/include/simu.h \
- /home/lancry/torcs-1.3.4/export/include/robottools.h \
- /home/lancry/torcs-1.3.4/export/include/robot.h \
- /home/lancry/torcs-1.3.4/export/include/portability.h \
- /home/lancry/torcs-1.3.4/config.h opponent.h cardata.h pit.h spline.h \
+ /homes/drl17/torcs-1.3.4/export/include/raceman.h \
+ /homes/drl17/torcs-1.3.4/export/include/graphic.h \
+ /homes/drl17/torcs-1.3.4/export/include/simu.h \
+ /homes/drl17/torcs-1.3.4/export/include/robottools.h \
+ /homes/drl17/torcs-1.3.4/export/include/robot.h \
+ /homes/drl17/torcs-1.3.4/export/include/portability.h \
+ /homes/drl17/torcs-1.3.4/config.h opponent.h cardata.h pit.h spline.h \
  learn.h strategy.h
 opponent.o: opponent.cpp /usr/include/stdc-predef.h opponent.h \
  /usr/include/stdio.h /usr/include/features.h \
@@ -212,7 +216,7 @@ opponent.o: opponent.cpp /usr/include/stdc-predef.h opponent.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/lancry/torcs-1.3.4/export/include/tgf.h \
+ /homes/drl17/torcs-1.3.4/export/include/tgf.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
@@ -231,15 +235,17 @@ opponent.o: opponent.cpp /usr/include/stdc-predef.h opponent.h \
  /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
  /usr/include/x86_64-linux-gnu/asm/param.h \
  /usr/include/asm-generic/param.h /usr/include/assert.h \
- /home/lancry/torcs-1.3.4/export/include/osspec.h \
- /home/lancry/torcs-1.3.4/export/include/track.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/linalg_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v2_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v3_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v4_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/straight2_t.h \
- /home/lancry/torcs-1.3.4/export/include/car.h /usr/include/plib/sg.h \
- /usr/include/plib/ul.h /usr/include/ctype.h /usr/include/unistd.h \
+ /homes/drl17/torcs-1.3.4/export/include/osspec.h \
+ /homes/drl17/torcs-1.3.4/export/include/track.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/linalg_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v3_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v4_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/straight2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/car.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/sg.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/ul.h \
+ /usr/include/ctype.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
@@ -252,13 +258,13 @@ opponent.o: opponent.cpp /usr/include/stdc-predef.h opponent.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/lancry/torcs-1.3.4/export/include/raceman.h \
- /home/lancry/torcs-1.3.4/export/include/graphic.h \
- /home/lancry/torcs-1.3.4/export/include/simu.h \
- /home/lancry/torcs-1.3.4/export/include/robottools.h \
- /home/lancry/torcs-1.3.4/export/include/robot.h driver.h \
- /home/lancry/torcs-1.3.4/export/include/portability.h \
- /home/lancry/torcs-1.3.4/config.h pit.h spline.h learn.h strategy.h \
+ /homes/drl17/torcs-1.3.4/export/include/raceman.h \
+ /homes/drl17/torcs-1.3.4/export/include/graphic.h \
+ /homes/drl17/torcs-1.3.4/export/include/simu.h \
+ /homes/drl17/torcs-1.3.4/export/include/robottools.h \
+ /homes/drl17/torcs-1.3.4/export/include/robot.h driver.h \
+ /homes/drl17/torcs-1.3.4/export/include/portability.h \
+ /homes/drl17/torcs-1.3.4/config.h pit.h spline.h learn.h strategy.h \
  cardata.h
 spline.o: spline.cpp /usr/include/stdc-predef.h spline.h
 pit.o: pit.cpp /usr/include/stdc-predef.h pit.h driver.h \
@@ -301,7 +307,7 @@ pit.o: pit.cpp /usr/include/stdc-predef.h pit.h driver.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/lancry/torcs-1.3.4/export/include/tgf.h \
+ /homes/drl17/torcs-1.3.4/export/include/tgf.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
@@ -320,15 +326,17 @@ pit.o: pit.cpp /usr/include/stdc-predef.h pit.h driver.h \
  /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
  /usr/include/x86_64-linux-gnu/asm/param.h \
  /usr/include/asm-generic/param.h /usr/include/assert.h \
- /home/lancry/torcs-1.3.4/export/include/osspec.h \
- /home/lancry/torcs-1.3.4/export/include/track.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/linalg_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v2_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v3_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v4_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/straight2_t.h \
- /home/lancry/torcs-1.3.4/export/include/car.h /usr/include/plib/sg.h \
- /usr/include/plib/ul.h /usr/include/ctype.h /usr/include/unistd.h \
+ /homes/drl17/torcs-1.3.4/export/include/osspec.h \
+ /homes/drl17/torcs-1.3.4/export/include/track.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/linalg_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v3_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v4_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/straight2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/car.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/sg.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/ul.h \
+ /usr/include/ctype.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
@@ -341,13 +349,13 @@ pit.o: pit.cpp /usr/include/stdc-predef.h pit.h driver.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/lancry/torcs-1.3.4/export/include/raceman.h \
- /home/lancry/torcs-1.3.4/export/include/graphic.h \
- /home/lancry/torcs-1.3.4/export/include/simu.h \
- /home/lancry/torcs-1.3.4/export/include/robottools.h \
- /home/lancry/torcs-1.3.4/export/include/robot.h \
- /home/lancry/torcs-1.3.4/export/include/portability.h \
- /home/lancry/torcs-1.3.4/config.h opponent.h cardata.h learn.h \
+ /homes/drl17/torcs-1.3.4/export/include/raceman.h \
+ /homes/drl17/torcs-1.3.4/export/include/graphic.h \
+ /homes/drl17/torcs-1.3.4/export/include/simu.h \
+ /homes/drl17/torcs-1.3.4/export/include/robottools.h \
+ /homes/drl17/torcs-1.3.4/export/include/robot.h \
+ /homes/drl17/torcs-1.3.4/export/include/portability.h \
+ /homes/drl17/torcs-1.3.4/config.h opponent.h cardata.h learn.h \
  strategy.h spline.h
 learn.o: learn.cpp /usr/include/stdc-predef.h learn.h \
  /usr/include/stdio.h /usr/include/features.h \
@@ -389,7 +397,7 @@ learn.o: learn.cpp /usr/include/stdc-predef.h learn.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/lancry/torcs-1.3.4/export/include/tgf.h \
+ /homes/drl17/torcs-1.3.4/export/include/tgf.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
@@ -408,15 +416,17 @@ learn.o: learn.cpp /usr/include/stdc-predef.h learn.h \
  /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
  /usr/include/x86_64-linux-gnu/asm/param.h \
  /usr/include/asm-generic/param.h /usr/include/assert.h \
- /home/lancry/torcs-1.3.4/export/include/osspec.h \
- /home/lancry/torcs-1.3.4/export/include/track.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/linalg_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v2_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v3_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v4_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/straight2_t.h \
- /home/lancry/torcs-1.3.4/export/include/car.h /usr/include/plib/sg.h \
- /usr/include/plib/ul.h /usr/include/ctype.h /usr/include/unistd.h \
+ /homes/drl17/torcs-1.3.4/export/include/osspec.h \
+ /homes/drl17/torcs-1.3.4/export/include/track.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/linalg_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v3_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v4_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/straight2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/car.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/sg.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/ul.h \
+ /usr/include/ctype.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
@@ -429,13 +439,13 @@ learn.o: learn.cpp /usr/include/stdc-predef.h learn.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/lancry/torcs-1.3.4/export/include/raceman.h \
- /home/lancry/torcs-1.3.4/export/include/graphic.h \
- /home/lancry/torcs-1.3.4/export/include/simu.h \
- /home/lancry/torcs-1.3.4/export/include/robottools.h \
- /home/lancry/torcs-1.3.4/export/include/robot.h \
- /home/lancry/torcs-1.3.4/export/include/portability.h \
- /home/lancry/torcs-1.3.4/config.h
+ /homes/drl17/torcs-1.3.4/export/include/raceman.h \
+ /homes/drl17/torcs-1.3.4/export/include/graphic.h \
+ /homes/drl17/torcs-1.3.4/export/include/simu.h \
+ /homes/drl17/torcs-1.3.4/export/include/robottools.h \
+ /homes/drl17/torcs-1.3.4/export/include/robot.h \
+ /homes/drl17/torcs-1.3.4/export/include/portability.h \
+ /homes/drl17/torcs-1.3.4/config.h
 strategy.o: strategy.cpp /usr/include/stdc-predef.h strategy.h \
  /usr/include/stdio.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -476,7 +486,7 @@ strategy.o: strategy.cpp /usr/include/stdc-predef.h strategy.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/lancry/torcs-1.3.4/export/include/tgf.h \
+ /homes/drl17/torcs-1.3.4/export/include/tgf.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
@@ -495,15 +505,17 @@ strategy.o: strategy.cpp /usr/include/stdc-predef.h strategy.h \
  /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
  /usr/include/x86_64-linux-gnu/asm/param.h \
  /usr/include/asm-generic/param.h /usr/include/assert.h \
- /home/lancry/torcs-1.3.4/export/include/osspec.h \
- /home/lancry/torcs-1.3.4/export/include/track.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/linalg_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v2_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v3_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v4_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/straight2_t.h \
- /home/lancry/torcs-1.3.4/export/include/car.h /usr/include/plib/sg.h \
- /usr/include/plib/ul.h /usr/include/ctype.h /usr/include/unistd.h \
+ /homes/drl17/torcs-1.3.4/export/include/osspec.h \
+ /homes/drl17/torcs-1.3.4/export/include/track.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/linalg_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v3_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v4_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/straight2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/car.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/sg.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/ul.h \
+ /usr/include/ctype.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
@@ -516,13 +528,13 @@ strategy.o: strategy.cpp /usr/include/stdc-predef.h strategy.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/lancry/torcs-1.3.4/export/include/raceman.h \
- /home/lancry/torcs-1.3.4/export/include/graphic.h \
- /home/lancry/torcs-1.3.4/export/include/simu.h \
- /home/lancry/torcs-1.3.4/export/include/robottools.h \
- /home/lancry/torcs-1.3.4/export/include/robot.h driver.h \
- /home/lancry/torcs-1.3.4/export/include/portability.h \
- /home/lancry/torcs-1.3.4/config.h opponent.h cardata.h pit.h spline.h \
+ /homes/drl17/torcs-1.3.4/export/include/raceman.h \
+ /homes/drl17/torcs-1.3.4/export/include/graphic.h \
+ /homes/drl17/torcs-1.3.4/export/include/simu.h \
+ /homes/drl17/torcs-1.3.4/export/include/robottools.h \
+ /homes/drl17/torcs-1.3.4/export/include/robot.h driver.h \
+ /homes/drl17/torcs-1.3.4/export/include/portability.h \
+ /homes/drl17/torcs-1.3.4/config.h opponent.h cardata.h pit.h spline.h \
  learn.h
 cardata.o: cardata.cpp /usr/include/stdc-predef.h cardata.h \
  /usr/include/stdio.h /usr/include/features.h \
@@ -546,9 +558,9 @@ cardata.o: cardata.cpp /usr/include/stdc-predef.h cardata.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/lancry/torcs-1.3.4/export/include/car.h \
- /home/lancry/torcs-1.3.4/export/include/track.h \
- /home/lancry/torcs-1.3.4/export/include/tgf.h \
+ /homes/drl17/torcs-1.3.4/export/include/car.h \
+ /homes/drl17/torcs-1.3.4/export/include/track.h \
+ /homes/drl17/torcs-1.3.4/export/include/tgf.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
  /usr/include/endian.h /usr/include/x86_64-linux-gnu/bits/endian.h \
@@ -584,14 +596,16 @@ cardata.o: cardata.cpp /usr/include/stdc-predef.h cardata.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h \
- /usr/include/string.h /home/lancry/torcs-1.3.4/export/include/osspec.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/linalg_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v2_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v3_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/v4_t.h \
- /home/lancry/torcs-1.3.4/export/include/tmath/straight2_t.h \
- /usr/include/plib/sg.h /usr/include/plib/ul.h /usr/include/ctype.h \
- /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/string.h /homes/drl17/torcs-1.3.4/export/include/osspec.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/linalg_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v2_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v3_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/v4_t.h \
+ /homes/drl17/torcs-1.3.4/export/include/tmath/straight2_t.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/sg.h \
+ /homes/drl17/Documents/Project/Torcs_Project/plib/include/plib/ul.h \
+ /usr/include/ctype.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
  /usr/include/dlfcn.h /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
@@ -603,7 +617,7 @@ cardata.o: cardata.cpp /usr/include/stdc-predef.h cardata.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /home/lancry/torcs-1.3.4/export/include/robottools.h \
- /home/lancry/torcs-1.3.4/export/include/raceman.h \
- /home/lancry/torcs-1.3.4/export/include/graphic.h \
- /home/lancry/torcs-1.3.4/export/include/simu.h
+ /homes/drl17/torcs-1.3.4/export/include/robottools.h \
+ /homes/drl17/torcs-1.3.4/export/include/raceman.h \
+ /homes/drl17/torcs-1.3.4/export/include/graphic.h \
+ /homes/drl17/torcs-1.3.4/export/include/simu.h

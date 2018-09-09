@@ -2,9 +2,9 @@
 
     file        : racestate.cpp
     created     : Sat Nov 16 12:00:42 CET 2002
-    copyright   : (C) 2002 by Eric Espié                        
-    email       : eric.espie@torcs.org   
-    version     : $Id: racestate.cpp,v 1.5.2.4 2012/06/11 11:28:01 berniw Exp $                                  
+    copyright   : (C) 2002 by Eric Espiï¿½
+    email       : eric.espie@torcs.org
+    version     : $Id: racestate.cpp,v 1.5.2.4 2012/06/11 11:28:01 berniw Exp $
 
  ***************************************************************************/
 
@@ -17,8 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-/** @file   
-    		
+/** @file
+
     @author	<a href=mailto:eric.espie@torcs.org>Eric Espie</a>
     @version	$Id: racestate.cpp,v 1.5.2.4 2012/06/11 11:28:01 berniw Exp $
 */
@@ -114,7 +114,12 @@ ReStateManage(void)
 						RESTART=0;
 						ReRaceCleanup();
 						ReInfo->_reState = RE_STATE_PRE_RACE;
+						// BEGIN DEBUG: Could not use 'meta' = 1 in text mode maybe because of this
+						// GfuiScreenActivate(ReInfo->_reGameScreen);
+						// END DEBUG
+						// BEGIN VISION
 						GfuiScreenActivate(ReInfo->_reGameScreen);
+						// END VISION
 					}
 					else
 					{

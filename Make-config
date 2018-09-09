@@ -22,8 +22,8 @@ SHELL = /bin/bash
 srcdir = .
 top_srcdir = ${TORCS_BASE}
 
-prefix = /home/lancry/.torcs
-exec_prefix = /home/lancry/.torcs
+prefix = /homes/drl17/.torcs
+exec_prefix = /homes/drl17/.torcs
 
 bindir = ${exec_prefix}/bin
 libdir = ${exec_prefix}/lib/torcs

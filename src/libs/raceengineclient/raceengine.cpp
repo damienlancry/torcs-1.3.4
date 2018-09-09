@@ -127,9 +127,9 @@ ReManage(tCarElt *car)
 	tSituation *s = ReInfo->s;
 	const int BUFSIZE = 1024;
 	char buf[BUFSIZE];
-	
+
 	tReCarInfo *info = &(ReInfo->_reCarInfo[car->index]);
-	
+
 	if (car->_speed_x > car->_topSpeed) {
 		car->_topSpeed = car->_speed_x;
 	}
@@ -138,11 +138,11 @@ ReManage(tCarElt *car)
 	if (car->_speed_x > info->topSpd) {
 		info->topSpd = car->_speed_x;
 	}
-	
+
 	if (car->_speed_x < info->botSpd) {
 		info->botSpd = car->_speed_x;
 	}
-	
+
 	// Pitstop.
 	if (car->_pit) {
 		if (car->ctrl.raceCmd & RM_CMD_PIT_ASKED) {
@@ -154,7 +154,7 @@ ReManage(tCarElt *car)
 			}
 			memcpy(car->ctrl.msgColor, color, sizeof(car->ctrl.msgColor));
 		}
-		
+
 		if (car->_state & RM_CAR_STATE_PIT) {
 			car->ctrl.raceCmd &= ~RM_CMD_PIT_ASKED; // clear the flag.
 			if (car->_scheduledEventTime < s->currentTime) {
@@ -166,11 +166,11 @@ ReManage(tCarElt *car)
 				snprintf(car->ctrl.msg[2], 32, "in pits %.1fs", s->currentTime - info->startPitTime);
 			}
 		} else if ((car->ctrl.raceCmd & RM_CMD_PIT_ASKED) &&
-					car->_pit->pitCarIndex == TR_PIT_STATE_FREE &&	
+					car->_pit->pitCarIndex == TR_PIT_STATE_FREE &&
 				   (s->_maxDammage == 0 || car->_dammage <= s->_maxDammage))
 		{
 			tdble lgFromStart = car->_trkPos.seg->lgfromstart;
-			
+
 			switch (car->_trkPos.seg->type) {
 				case TR_STR:
 					lgFromStart += car->_trkPos.toStart;
@@ -179,7 +179,7 @@ ReManage(tCarElt *car)
 					lgFromStart += car->_trkPos.toStart * car->_trkPos.seg->radius;
 					break;
 			}
-		
+
 			if ((lgFromStart > car->_pit->lmin) && (lgFromStart < car->_pit->lmax)) {
 				pitok = 0;
 				int side;
@@ -191,7 +191,7 @@ ReManage(tCarElt *car)
 					side = TR_SIDE_LFT;
 					toBorder = car->_trkPos.toLeft;
 				}
-				
+
 				sseg = car->_trkPos.seg->side[side];
 				wseg = RtTrackGetWidth(sseg, car->_trkPos.toStart);
 				if (sseg->side[side]) {
@@ -204,7 +204,7 @@ ReManage(tCarElt *car)
 				{
 					pitok = 1;
 				}
-				
+
 				if (pitok) {
 					car->_state |= RM_CAR_STATE_PIT;
 					car->_nbPitStops++;
@@ -228,7 +228,7 @@ ReManage(tCarElt *car)
 			}
 		}
 	}
-	
+
 	/* Start Line Crossing */
 	if (info->prevTrkPos.seg != car->_trkPos.seg) {
 		if ((info->prevTrkPos.seg->raceInfo & TR_LAST) && (car->_trkPos.seg->raceInfo & TR_START)) {
@@ -247,9 +247,9 @@ ReManage(tCarElt *car)
 								car->_bestLapTime = car->_lastLapTime;
 							}
 						}
-						
+
 						car->_commitBestLapTime = true;
-						
+
 						if (car->_pos != 1) {
 							car->_timeBehindLeader = car->_curTime - s->cars[0]->_curTime;
 							car->_lapsBehindLeader = s->cars[0]->_laps - car->_laps;
@@ -282,7 +282,7 @@ ReManage(tCarElt *car)
 								/* save the lap result */
 								ReSavePracticeLap(car);
 								break;
-								
+
 							case RM_TYPE_QUALIF:
 								if (ReInfo->_displayMode == RM_DISP_MODE_NONE) {
 									ReUpdateQualifCurRes(car);
@@ -294,7 +294,7 @@ ReManage(tCarElt *car)
 							ReUpdateQualifCurRes(car);
 						}
 					}
-			
+
 					info->topSpd = car->_speed_x;
 					info->botSpd = car->_speed_x;
 					if ((car->_remainingLaps < 0) || (s->_raceState == RM_RACE_FINISHING)) {
@@ -352,7 +352,7 @@ ReManage(tCarElt *car)
 	car->_distRaced = (car->_laps - (info->lapFlag + 1)) * ReInfo->track->length + car->_distFromStartLine;
 }
 
-static void 
+static void
 ReSortCars(void)
 {
     int		i,j;
@@ -367,7 +367,7 @@ ReSortCars(void)
     } else {
 	allfinish = 1;
     }
-    
+
     for (i = 1; i < s->_ncars; i++) {
 	j = i;
 	while (j > 0) {
@@ -395,7 +395,7 @@ ReSortCars(void)
 		if (s->cars[i]->RESET==1)
 		{
 			//printf("******* RESETTING *****\n");
-			ReInfo->_reSimItf.config(s->cars[i], ReInfo);		
+			ReInfo->_reSimItf.config(s->cars[i], ReInfo);
 			s->cars[i]->RESET=0;
 			sprintf(buf, "RELOADING");
 			ReRaceMsgSet(buf, 4);
@@ -441,7 +441,7 @@ ReRaceRules(tCarElt *car)
 
 	const int BUFSIZE = 1024;
 	char buf[BUFSIZE];
-	
+
 	if (ReInfo->s->_raceType == RM_TYPE_QUALIF || ReInfo->s->_raceType == RM_TYPE_PRACTICE) {
 		// If a car hits the track wall the lap time is invalidated, because of tracks where this behaviour allows much faster laps (e.g. alpine-2)
 		// Invalidation and message is just shown on the first hit
@@ -450,11 +450,11 @@ ReRaceRules(tCarElt *car)
 			snprintf(buf, BUFSIZE, "%s hit wall, laptime invalidated", car->_name);
 			ReRaceMsgSet(buf, 5);
 		}
-		
+
 		// If the car cuts a corner the lap time is invalidated. Cutting a corner means: the center of gravity is more than 0.7 times the car width
 		// away from the main track segment on the inside of a turn. The rule does not apply on the outside and on straights.
 		tTrackSeg *mainseg = car->_trkPos.seg;
-		
+
 		if (car->_commitBestLapTime && (mainseg->type != TR_STR)) {
 			tTrackPitInfo pitInfo = track->pits;
 			bool pit = false;
@@ -469,7 +469,7 @@ ReRaceRules(tCarElt *car)
 					}
 				}
 			}
-			
+
 			tdble toborder = 0.0f;
 			if (mainseg->type == TR_LFT) {
 				toborder = car->_trkPos.toLeft;
@@ -488,11 +488,11 @@ ReRaceRules(tCarElt *car)
 				snprintf(buf, BUFSIZE, "%s cut corner, laptime invalidated", car->_name);
 				ReRaceMsgSet(buf, 5);
 			}
-			
+
 			//TODO: if this happens often in the race, add penalty in pro mode.
 		}
 	}
-	
+
 	if (car->_skillLevel < 3) {
 		/* only for the pros */
 		return;
@@ -505,7 +505,7 @@ ReRaceRules(tCarElt *car)
 			car->_state |= RM_CAR_STATE_ELIMINATED;
 			return;
 		}
-	
+
 		switch (penalty->penalty) {
 			case RM_PENALTY_DRIVETHROUGH:
 				snprintf(car->ctrl.msg[3], 32, "Drive Through Penalty");
@@ -517,10 +517,10 @@ ReRaceRules(tCarElt *car)
 				*(car->ctrl.msg[3]) = 0;
 				break;
 		}
-		
+
 		memcpy(car->ctrl.msgColor, color, sizeof(car->ctrl.msgColor));
 	}
-    
+
 	if (prevSeg->raceInfo & TR_PITSTART) {
 		/* just entered the pit lane */
 		if (seg->raceInfo & TR_PIT) {
@@ -565,7 +565,7 @@ ReRaceRules(tCarElt *car)
 				GF_TAILQ_REMOVE(&(car->_penaltyList), penalty, link);
 				FREEZ(penalty);
 			}
-			
+
 			rules->ruleState = 0;
 		} else {
 			/* went out of the pit lane illegally... */
@@ -686,7 +686,7 @@ reCapture(void)
 	tRmMovieCapture	*capture = &(ReInfo->movieCapture);
 	const int BUFSIZE = 1024;
 	char buf[BUFSIZE];
-	
+
 	GfScrGetSize(&sw, &sh, &vw, &vh);
 	img = (unsigned char*)malloc(vw * vh * 3);
 	if (img == NULL) {
@@ -712,13 +712,13 @@ ReUpdate(void)
 	int mode = RM_ASYNC;
 	int i;
 	const int MAXSTEPS = 2000;
-	
+
 	START_PROFILE("ReUpdate");
 	ReInfo->_refreshDisplay = 0;
 	switch (ReInfo->_displayMode) {
 		case RM_DISP_MODE_NORMAL:
 			t = GfTimeClock();
-			
+
 			i = 0;
 			START_PROFILE("ReOneStep*");
 			while ((ReInfo->_reRunning && ((t - ReInfo->_reCurTime) > RCM_MAX_DT_SIMU)) && MAXSTEPS > i++) {
@@ -730,7 +730,7 @@ ReUpdate(void)
 				// Cannot keep up with time warp, reset time to avoid lag when running slower again
 				ReInfo->_reCurTime = GfTimeClock();
 			}
-			
+
 			GfuiDisplay();
 			ReInfo->_reGraphicItf.refresh(ReInfo->s);
 			glutPostRedisplay();	/* Callback -> reDisplay */
@@ -801,7 +801,7 @@ ReTimeMod (void *vcmd)
 
 	const int BUFSIZE = 1024;
 	char buf[BUFSIZE];
-	
+
 	snprintf(buf, BUFSIZE, "Time x%.2f", 1.0 / ReInfo->_reTimeMult);
 	ReRaceMsgSet(buf, 5);
 }

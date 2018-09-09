@@ -34,7 +34,7 @@ init_args(int argc, char **argv, const char **raceconfig)
 {
 	int i;
 	char *buf;
-    
+
     setNoisy(false);
     setVersion("2013");
 
@@ -83,14 +83,23 @@ init_args(int argc, char **argv, const char **raceconfig)
 			printf("UDP Timeout set to %ld 10E-6 seconds.\n",t);
 			i++;
 		    }
+		} else if (strncmp(argv[i], "-p", 2) == 0) {
+		    i++;
+		    if (i < argc) {
+			short int p;
+			sscanf(argv[i],"%ld",&p);
+			setListenPort(p);
+			// printf("UDP Port set to %ld.\n",p);
+			i++;
+		    }
 		} else if (strncmp(argv[i], "-nodamage", 9) == 0) {
 		    i++;
 		    setDamageLimit(false);
-		    printf("Car damages disabled!\n");
+		    // printf("Car damages disabled!\n");
 		} else if (strncmp(argv[i], "-nofuel", 7) == 0) {
 		    i++;
 		    setFuelConsumption(false);
-		    printf("Fuel consumption disabled!\n");
+		    // printf("Fuel consumption disabled!\n");
 		} else if (strncmp(argv[i], "-noisy", 6) == 0) {
 		    i++;
 		    setNoisy(true);
@@ -105,7 +114,7 @@ init_args(int argc, char **argv, const char **raceconfig)
 		} else if (strncmp(argv[i], "-nolaptime", 10) == 0) {
 		    i++;
 		    setLaptimeLimit(false);
-		    printf("Laptime limit disabled!\n");   
+		    // printf("Laptime limit disabled!\n");
 		} else if(strncmp(argv[i], "-k", 2) == 0) {
 			i++;
 			// Keep modules in memory (for valgrind)
@@ -175,4 +184,3 @@ main(int argc, char *argv[])
 
 	return 0;					/* just for the compiler, never reached */
 }
-
