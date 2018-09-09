@@ -209,7 +209,7 @@ typedef struct RmInfo
     tRaceEngineInfo	raceEngineInfo;
     tRmMovieCapture	movieCapture;
     // BEGIN VISION
-    tRmVisionImg* vision;
+    // tRmVisionImg* vision;
     // END VISION
 } tRmInfo;
 
